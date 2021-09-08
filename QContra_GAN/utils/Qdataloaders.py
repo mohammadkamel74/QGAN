@@ -344,21 +344,21 @@ def CIFAR10_dataloader(root, quat_data, img_size, normalize, batch_size, num_wor
         test_loader = '_'
         return train_loader, test_loader, name   
 
-    # test_root = "./data/Test_FID_cifar/test_cifar"
-    # if eval:
-    #     dataset_test = datasets.CIFAR10(root=test_root, download= True, train=False,
-    #                                 transform = preprocessing_HQ(quat_data=False, img_size=32, normalize=False))
-    #     test_loader = torch.utils.data.DataLoader(dataset_test, batch_size=1, shuffle=False)
+    test_root = "./data/Test_FID_cifar/test_cifar"
+    if eval:
+        dataset_test = datasets.CIFAR10(root=test_root, download= True, train=False,
+                                    transform = preprocessing_HQ(quat_data=False, img_size=32, normalize=False))
+        test_loader = torch.utils.data.DataLoader(dataset_test, batch_size=1, shuffle=False)
 
-    #     for i, (data, _) in enumerate(test_loader):
-    #         # print(data.size())
-    #         # print(data)
-    #         # break
-    #         plt.ioff()
-    #         plt.axis("off")
-    #         imgs = data[0].permute(1,2,0)
-    #         img_path = test_root + str(i) + '.png'
-    #         plt.imsave(img_path, imgs.numpy())
+        for i, (data, _) in enumerate(test_loader):
+            # print(data.size())
+            # print(data)
+            # break
+            plt.ioff()
+            plt.axis("off")
+            imgs = data[0].permute(1,2,0)
+            img_path = test_root + str(i) + '.png'
+            plt.imsave(img_path, imgs.numpy())
 
 
 
