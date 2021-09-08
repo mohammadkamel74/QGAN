@@ -746,14 +746,14 @@ class MidQuaternionDiscriminator(nn.Module):
         else:
             self.linear1 = linear(in_features=512, out_features=1)
             if self.conditional_strategy in ['ContraGAN', 'Proxy_NCA_GAN', 'NT_Xent_GAN']:
-                self.linear2 = qlinear(in_features=512, out_features=hypersphere_dim)
+                self.linear2 = linear(in_features=512, out_features=hypersphere_dim)
                 if self.nonlinear_embed:
-                    self.linear3 = qlinear(in_features=hypersphere_dim, out_features=hypersphere_dim)
+                    self.linear3 = linear(in_features=hypersphere_dim, out_features=hypersphere_dim)
                 self.embedding = embedding(num_classes, hypersphere_dim)
             elif self.conditional_strategy == 'ProjGAN':
                 self.embedding = embedding(num_classes, 512)
             elif self.conditional_strategy == 'ACGAN':
-                self.linear4 = qlinear(in_features=512, out_features=num_classes)
+                self.linear4 = linear(in_features=512, out_features=num_classes)
             else:
                 pass
 
