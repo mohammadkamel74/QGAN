@@ -92,7 +92,7 @@ def qsnlinear(in_features, out_features, bias=True):
     return Qspectral_norm(QuaternionLinear(in_features=in_features, out_features=out_features, bias=bias), eps=1e-6)
 
 def midqsnlinear(in_features, out_features, bias=True):
-    return SplitQspectral_norm(nn.Linear(in_features=in_features, out_features=out_features, bias=bias))
+    return SplitQspectral_norm(QuaternionLinear(in_features=in_features, out_features=out_features, bias=bias))
 
 # def sn_embedding(num_embeddings, embedding_dim):
 #     return spectral_norm(nn.Embedding(num_embeddings=num_embeddings, embedding_dim=embedding_dim), eps=1e-6)
