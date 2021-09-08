@@ -55,7 +55,7 @@ class Trainer():
                  gpu_num=1,
                  save_FID=False,
                  FIDPaths = ['generated_images','real_images'],
-                 checkpoint_folder='checkpoints',
+                 checkpoint_folder='./ch/',
                  FIDevery = 500,
                  FIDImages = 100,
                  plot_images=False,
@@ -414,12 +414,18 @@ class Trainer():
     def save_model(self, folder):
         '''Save D and G models \nfolder: where to save models'''
         
-        # Save models
         gen_name = self.G.__class__.__name__
         disc_name = self.D.__class__.__name__
         
-        gen_path = folder + gen_name
-        disc_path = folder + disc_name
+        gen_path = str(folder) + str(gen_name) +'/'
+
+        if not os.path.isdir(gen_path):
+          os.makedirs(gen_path)
+          
+        disc_path = str(folder) + str(disc_name) +'/'
+
+        if not os.path.isdir(disc_path):
+          os.makedirs(disc_path)
         
         torch.save(self.G.state_dict(), gen_path + '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(
             hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
