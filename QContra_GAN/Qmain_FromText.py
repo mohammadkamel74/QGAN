@@ -193,9 +193,9 @@ if __name__ == '__main__':
     FID_paths = [gen_img_path, real_img_path]
     
     
-    checkpoint_folder = 'checkpoints/'
-    if not os.path.isdir(checkpoint_folder):
-        os.makedirs(checkpoint_folder)
+    checkpoint_folder = './ch/'
+    #if not os.path.isdir(checkpoint_folder):
+    #    os.makedirs(checkpoint_folder)
     
     # Initialize optimizers
     G_optimizer = optim.Adam(generator.parameters(), lr=lr, betas=betas)
