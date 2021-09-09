@@ -25,10 +25,10 @@ from utils.Qdataloaders import CIFAR10_dataloader
 from utils.sample import sample_latents
 # from utils.pytorch_fid import fid_score
 
-check_path_G = "./checkpoints/Generator_epoch128_GSN-False_DSN-True_2021-08-05_16-08-48.pt"
+check_path_G = "./ch/Generator/_epoch1_GSN-False_DSN-True_2021-09-09_09-03-17.pt"
 
-model = 'DCGAN'
-model_name = 'DCGAN'
+model = 'MidQDCGAN'
+model_name = 'MidQDCGAN'
 
 CelebAHQ = False
 if CelebAHQ:
@@ -82,7 +82,7 @@ if plott or save_imgs:
     
     if save_imgs:
         if not os.path.isdir(save_path):
-            os.mkdir(save_path)
+            os.makedirs(save_path)
 
     
     # info = check_path.split()
