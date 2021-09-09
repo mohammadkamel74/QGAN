@@ -25,7 +25,7 @@ from utils.Qdataloaders import CIFAR10_dataloader
 from utils.sample import sample_latents
 # from utils.pytorch_fid import fid_score
 
-check_path_G = "./ch/Generator/_epoch1_GSN-False_DSN-True_2021-09-09_09-03-17.pt"
+check_path_G = "./ch/MidQuaternionGenerator/_epoch1_GSN-False_DSN-True_2021-09-09_09-52-57.pt"
 
 model = 'MidQDCGAN'
 model_name = 'MidQDCGAN'
