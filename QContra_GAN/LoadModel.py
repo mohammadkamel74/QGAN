@@ -142,7 +142,7 @@ if getFid:
     print(inception_score(dset, len(dset), cuda=True, batch_size=32, resize=True, splits=10))
 
     print('Computing FID...')
-    
+    original='./data/Test_FID_cifar/'	
     print('path:', original)
     fid = FID()(path=[save_path, original])
     # fid = fid_score.main(device='cuda:0', path=['C:/Users/eleon/Documents/Dottorato/Code/QRotGAN/results/Imgs_FID_TEST/', 'C:/Users/eleon/Documents/Dottorato/Code/QRotGAN/data/Test_FID_3000_HQ/Test_FID_3000_HQ'], batch_size=50, dims=2048)
