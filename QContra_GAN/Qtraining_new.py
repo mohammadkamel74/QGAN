@@ -430,10 +430,20 @@ class Trainer():
         torch.save(self.G.state_dict(), gen_path + '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(
             hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
             hasattr(self.D, 'd_spectral_norm') and self.D.d_spectral_norm ==True, date) + '.pt')
+        
+        model_save_name = '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
+            hasattr(self.D, 'd_spectral_norm') and self.D.d_spectral_norm ==True, date) + '.pt'
+        path = '/content/gdrive/My Drive/elemodelG/'+ model_save_name 
+        torch.save(self.G.state_dict(), path)
 
         torch.save(self.D.state_dict(), disc_path + '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(
             hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
             hasattr(self.D, 'd_spectral_norm') and self.D.d_spectral_norm ==True, date) + '.pt')
+        
+        model_save_name = '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
+            hasattr(self.D, 'd_spectral_norm') and self.D.d_spectral_norm ==True, date) + '.pt'
+        path = '/content/gdrive/My Drive/elemodelD/'+ model_save_name 
+        torch.save(self.D.state_dict(), path)
             
 
     def genImages(self):
