@@ -90,6 +90,7 @@ class Trainer():
         if self.switch =='startfromscratch':
           self.G_opt = gen_optimizer
           self.D_opt = dis_optimizer
+	  self.epoch=0
           self.losses = {'LossG': [], 'LossD': [], 'GP': []}
         if self.switch =='startfromcheck':
           print("sexy")
