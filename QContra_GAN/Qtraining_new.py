@@ -471,7 +471,7 @@ class Trainer():
             'model_state_dict': self.G.state_dict(),
             'optimizer_state_dict': self.G_opt.state_dict(),
             'lossG': self.losses['LossG'],
-			'lossGP':self.losses['GP'],
+	    'lossGP':self.losses['GP'],
             }
         torch.save(varG, gen_path + '_epoch{}'.format(self.epoch) + '_GSN-{}_DSN-{}_{}'.format(
             hasattr(self.G, 'g_spectral_norm') and self.G.g_spectral_norm ==True,
