@@ -93,7 +93,7 @@ class Trainer():
 	  self.epoch=0
           self.losses = {'LossG': [], 'LossD': [], 'GP': []}
         if self.switch =='startfromcheck':
-          print("sexy")
+          print("continue from checkpoint")
           checkpointD = torch.load('ch/MidQuaternionDiscriminator/_epoch1_GSN-False_DSN-True_2021-09-17_17-52-03.pt')
           checkpointG = torch.load('ch/MidQuaternionGenerator/_epoch1_GSN-False_DSN-True_2021-09-17_17-52-03.pt')
           self.G.load_state_dict(checkpointG['model_state_dict'])
